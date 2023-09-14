@@ -3,12 +3,11 @@ name: Feature request
 about: Suggest a feature
 title: "[Feature]"
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 **Please Describe the feature**
-A clear and concise description of what the feature  [...]
+A clear and concise description of what the feature [...]
 
 **Describe the solution you'd like**
 A clear and concise description of what you want to happen.
