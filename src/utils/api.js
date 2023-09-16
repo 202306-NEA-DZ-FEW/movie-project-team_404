@@ -10,6 +10,5 @@ export async function moviesFetcher(apiRouter) {
 
   const response = await fetch(url, options)
   const data = await response.json()
-
   return data
 }
