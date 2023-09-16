@@ -4,7 +4,7 @@ const Hero = ({ movie }) => {
 
   return (
     <section
-      className="bg-cover bg-center h-screen flex items-center relative"
+      className="bg-cover bg-center h-screen mt-4 flex items-center relative"
       style={{ backgroundImage: `url(${backgroundImg})`, position: "relative" }}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black opacity-70 "></div>

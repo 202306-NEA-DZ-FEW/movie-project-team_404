@@ -53,7 +53,7 @@ const NavBar = () => {
       <div className="drawer-content  flex flex-col ">
         {/* Navbar */}
         <div
-          className="w-full navbar bg-base-100  bg-opacity-10 h-20 backdrop-blur transition-all duration-100  text-base-content 
+          className="w-full navbar bg-base-100  bg-opacity-90 h-20 backdrop-blur transition-all duration-100  text-base-content 
   shadow-md"
         >
           <div className="flex-none lg:hidden">
