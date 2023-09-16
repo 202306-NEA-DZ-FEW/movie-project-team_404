@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 const NavBar = () => {
@@ -41,7 +42,7 @@ const NavBar = () => {
     document.querySelector("html").setAttribute("data-theme", localTheme)
   }, [theme])
   return (
-    <div className="drawer">
+    <div className="drawer sticky top-0 z-30  h-16 w-full">
       <input
         id="my-drawer-3"
         type="checkbox"
@@ -49,9 +50,12 @@ const NavBar = () => {
         onChange={handleDrawer}
         checked={drawerChecked}
       />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content  flex flex-col ">
         {/* Navbar */}
-        <div className="w-full navbar bg-base-100">
+        <div
+          className="w-full navbar bg-base-100  bg-opacity-10 h-20 backdrop-blur transition-all duration-100  text-base-content 
+  shadow-md"
+        >
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
               <svg
@@ -70,10 +74,22 @@ const NavBar = () => {
               </svg>
             </label>
           </div>
-          <div className="flex-0 px-2 mx-5 text-xl ">
-            <Link href="/">Moviz</Link>
+          <div className="flex-0 px-2 mx-2 mt-0 text-xl ">
+            <Image
+              width="40"
+              height="40"
+              src="https://img.icons8.com/3d-fluency/94/documentary.png"
+              alt="MovizHome"
+              className="mx-2 mt-[-10px]"
+            />
+            <Link
+              className="font-bold text-opacity-20 text-2xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600"
+              href="/"
+            >
+              MoviPlaza
+            </Link>
           </div>
-          <div className="flex-1 hidden lg:flex">
+          <div className=" hidden lg:flex flex-1 ">
             <ul className="menu menu-horizontal ">
               {/* Navbar menu content here */}
 
@@ -143,7 +159,7 @@ const NavBar = () => {
               </div>
             </ul>
           </div>
-          <div className="navbar-end ml-7">
+          <div className="navbar-end ml-5 ">
             <button className="btn btn-ghost btn-circle">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -187,6 +203,8 @@ const NavBar = () => {
           </div>
         </div>
       </div>
+
+      {/*  side drawer */}
 
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
