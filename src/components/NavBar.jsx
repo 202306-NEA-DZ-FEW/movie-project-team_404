@@ -56,7 +56,7 @@ const NavBar = () => {
         onChange={handleDrawer}
         checked={drawerChecked}
       />
-      {console.log(genres)}
+
       <div className="drawer-content  flex flex-col ">
         {/* Navbar */}
         <div
