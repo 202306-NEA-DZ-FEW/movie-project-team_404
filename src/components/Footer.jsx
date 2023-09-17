@@ -23,7 +23,7 @@ const Footer = () => {
       github: "https://github.com/HamidAhmidat",
     },
     {
-      name: " Ibrahim Hadj ",
+      name: " Brahim Hadj Mahammed ",
       github: "https://github.com/BrahimHM",
     },
   ]
