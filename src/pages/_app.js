@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
         <Component {...pageProps} />
 
         <ProgressBar
-          height="5px"
+          height="6px"
           color={"linear-gradient(to top, #00b4db, #0083b0)"}
           options={{ showSpinner: false }}
         />
