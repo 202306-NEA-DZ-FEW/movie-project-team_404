@@ -18,7 +18,6 @@ export default function MoviePage({
       behavior: "smooth",
     })
   }
-
   return (
     <>
       <TrailerLayout

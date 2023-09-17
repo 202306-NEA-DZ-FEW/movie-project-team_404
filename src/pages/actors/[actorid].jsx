@@ -24,7 +24,7 @@ export default function ActorPage({ actorData, Movies }) {
         {Movies.map((item) => {
           return (
             <Link
-              href={`movies/${item.id}`}
+              href={`../movies/${item.id}`}
               className=" content-center"
               key={item.original_title}
             >

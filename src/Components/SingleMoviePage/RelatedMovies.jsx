@@ -1,14 +1,16 @@
 import React from "react"
 import TestCard from "./TestCard"
+import Link from "next/link"
 
 function RelatedMovies({ relatedInformation }) {
   const relatedData = relatedInformation.results.map((movieInfo) => {
     return (
+      <Link href={`../movies/${movieInfo.id}`} key={movieInfo.id}>
       <TestCard
-        key={movieInfo.id}
         imageURL={movieInfo.poster_path}
         actorName={movieInfo.title}
       />
+      </Link>
     )
   })
 

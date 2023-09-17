@@ -1,16 +1,19 @@
 import React from "react"
 import TestCard from "./TestCard"
+import Link from "next/link"
 
 function MainActors({ creditsData }) {
   const slicedCast = creditsData.cast.slice(0, 5)
   const castElements = slicedCast.map((castMember) => {
     return (
-      <TestCard
-        key={castMember.name}
+      <Link href={`../actors/${castMember.id}`} key={castMember.id}>
+       <TestCard
         imageURL={castMember.profile_path}
         actorName={castMember.name}
         characterName={castMember.character}
       />
+      </Link>
+     
     )
   })
 
