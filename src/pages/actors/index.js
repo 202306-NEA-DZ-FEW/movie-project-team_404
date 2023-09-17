@@ -1,12 +1,12 @@
 import { moviesFetcher } from "@/utils/api"
-import ActorCard from "@/components/ActorCard"
+import ActorsCard from "@/components/ActorsCard"
 
 export default function Actors({ actors }) {
   return (
     <div className="h- 500 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-10 mx-auto justify-items-center">
       {actors.results.map((actor) => (
         <div className="w-4/5 h-4/5" key={actor.id}>
-          <ActorCard {...actor} />
+          <ActorsCard {...actor} />
         </div>
       ))}
     </div>

@@ -1,4 +1,4 @@
-export default function ActorCard({ name, profile_path, popularity }) {
+export default function ActorsCard({ name, profile_path, popularity }) {
   return (
     <div className="bg-light-gray items-center relative cursor-pointer shadow-md transition-transform transform hover:scale-105 hover:skew-y-3 ">
       <div className="overflow-hidden ">
