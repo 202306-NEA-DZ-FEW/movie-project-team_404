@@ -1,16 +1,40 @@
 import { moviesFetcher } from "@/utils/api"
 
 import Card from "@/components/Card"
+import MovieCard from "../components/Card/MovieCard"
 import Pagination from "@/components/Pagination"
 
-const Movies = ({ config, data, page }) => {
+const Movies = ({ config, data, page, typeIndex }) => {
   const imgConfig = config.images.base_url + config.images.backdrop_sizes[0]
+
+  const realmoviesTypes = [
+    "Now Playing",
+    "Upcoming",
+    "Popular",
+    "Top Rated",
+    "Latest",
+  ]
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-10 pt-5">
+      <div className="my-12 text-accent font-bold">
+        <h1
+          className="
+          text-[10vw] text-center
+          sm:text-[5vw] sm:px-10"
+        >
+          {realmoviesTypes[typeIndex]}
+        </h1>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-10 py-20 px-10">
         {data.results.map((movie) => {
-          return <Card movie={movie} imgConfig={imgConfig} key={movie.id} />
+          return (
+            <MovieCard
+              title={movie.original_title}
+              poster_path={movie.poster_path}
+              key={movie.id}
+            />
+          )
         })}
       </div>
       <Pagination pages={data.total_pages} currentPage={page} />
@@ -33,11 +57,18 @@ export async function getServerSideProps(context) {
   if (!moviesTypes.includes(choosenType)) return { notFound: true }
 
   const config = await moviesFetcher("configuration")
-  const data = await moviesFetcher("movie/" + choosenType + `?page=${page}`)
+  let apiRoute
+
+  if (choosenType === "latest") apiRoute = `trending/movie/week?page=${page}`
+  else apiRoute = `movie/${choosenType}?page=${page}`
+
+  const data = await moviesFetcher(apiRoute)
 
   if (!data.results.length) return { notFound: true }
 
-  return { props: { config, data, page } }
+  const typeIndex = moviesTypes.indexOf(choosenType)
+
+  return { props: { config, data, page, typeIndex } }
 }
 
 export default Movies
