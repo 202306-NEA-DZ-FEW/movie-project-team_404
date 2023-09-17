@@ -24,16 +24,14 @@ export default function ActorPage({ actorData, Movies }) {
         {Movies.map((item) => {
           return (
             <Link
-              href="#"
+              href={`movies/${item.id}`}
               className=" content-center"
               key={item.original_title}
             >
-              <div className=" flex-grow">
-                <Image
-                  width="100"
-                  height="100"
+              <div className=" flex flex-col">
+                <img
                   alt={item.original_title}
-                  class="object-cover object-center rounded-md"
+                  class="object-cover object-center rounded-md "
                   src={"https://image.tmdb.org/t/p/w500" + item.backdrop_path}
                 />
                 <p class="leading-relaxed text-[11px] break-words ">
