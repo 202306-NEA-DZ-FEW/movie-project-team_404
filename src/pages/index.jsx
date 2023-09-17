@@ -1,16 +1,16 @@
 import { moviesFetcher } from "@/utils/api"
-import Hero from "./components/HomePage/Hero"
-import MovieCard from "./components/Card/MovieCard"
+import Hero from "../components/HomePage/Hero"
+import MovieCard from "../components/Card/MovieCard"
 import Link from "next/link"
 
 function HomePage({ latestMovies, selectedMovie }) {
   return (
     <main className="font-mono ">
       <Hero movie={selectedMovie} />
-      <div className="grid border-l-indigo-900 grid-cols-2 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 p-8 ">
+      <div className="w-4/5 sm:w-full  sm:px-20  grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-auto justify-center p-8 ">
         {latestMovies.results.map((movie) => {
           return (
-            <div key={movie.id}>
+            <div key={movie.id} className=" mx-auto ">
               <Link href={`/movies/${movie.id}`}>
                 <MovieCard {...movie} />
               </Link>
