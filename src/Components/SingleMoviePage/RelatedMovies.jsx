@@ -14,7 +14,7 @@ function RelatedMovies({ relatedInformation }) {
 
   return (
     <div>
-      <h1 className="text-xl pt-5 font-medium text-center pt-16 pb-5">
+      <h1 className="text-xl pt-5 font-medium text-center pb-5">
         Related movies:
       </h1>
       <div className="grid grid-cols-6 place-items-center">{relatedData}</div>
