@@ -102,7 +102,7 @@ const NavBar = () => {
 
               <label className="">
                 <li className="text-base">
-                  <Link className="btn btn-ghost p-4 m-2" href="actors">
+                  <Link className="btn btn-ghost p-4 m-2" href="/actors">
                     Actors
                   </Link>
                 </li>
