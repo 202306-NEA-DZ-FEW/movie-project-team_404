@@ -32,7 +32,10 @@ const SideDrawer = ({ movies, handleDrawer, genres }) => {
               >
                 <li>
                   {genres.map((genre) => (
-                    <Link key={genre.id} href={`movies?filter=${genre.name}`}>
+                    <Link
+                      key={genre.id}
+                      href={`/movies/genre/${genre.name}?page=1`}
+                    >
                       {genre.name}
                     </Link>
                   ))}

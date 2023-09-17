@@ -17,23 +17,23 @@ const NavBar = () => {
   const movies = [
     {
       name: "Now Playing ",
-      url: "/movies?filter=now-playing",
+      url: "/movies/now_playing?page=1",
     },
     {
       name: "Upcomming ",
-      url: "/movies?filter=upcomming",
+      url: "/movies/upcoming?page=1",
     },
     {
       name: "Popular ",
-      url: "/movies?filter=popular",
+      url: "/movies/popular?page=1",
     },
     {
       name: "Top Rate",
-      url: "/movies?filter=top-rate",
+      url: "/movies/top_rated?page=1",
     },
     {
       name: "Latest ",
-      url: "/movies?filter=latest",
+      url: "/movies/latest?page=1",
     },
   ]
   const fetchGenres = async () => {
@@ -158,7 +158,10 @@ const NavBar = () => {
                 >
                   <li>
                     {genres.map((genre) => (
-                      <Link key={genre.id} href={`movies?filter=${genre.name}`}>
+                      <Link
+                        key={genre.id}
+                        href={`/movies/genre/${genre.name}?page=1`}
+                      >
                         {genre.name}
                       </Link>
                     ))}
