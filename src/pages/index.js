@@ -1,10 +1,8 @@
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 `}
-    >
+    <main>
       <div className="main">
-        <h1>404 movies</h1>
+        <h1 className="text-2xl text-red-900">404 movies</h1>
       </div>
     </main>
   )
