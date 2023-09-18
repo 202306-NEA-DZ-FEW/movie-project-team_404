@@ -1,7 +1,7 @@
-import MainActors from "@/Components/SingleMoviePage/MainActors"
-import MovieInformation from "@/Components/SingleMoviePage/MovieInformation"
-import RelatedMovies from "@/Components/SingleMoviePage/RelatedMovies"
-import TrailerLayout from "@/Components/SingleMoviePage/TrailerLayout"
+import MainActors from "@/components/SingleMoviePage/MainActors"
+import MovieInformation from "@/components/SingleMoviePage/MovieInformation"
+import RelatedMovies from "@/components/SingleMoviePage/RelatedMovies"
+import TrailerLayout from "@/components/SingleMoviePage/TrailerLayout"
 import { moviesFetcher } from "@/utils/api"
 
 export default function MoviePage({
