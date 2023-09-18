@@ -1,6 +1,6 @@
 import { moviesFetcher } from "@/utils/api"
-import Hero from "../components/HomePage/Hero"
-import MovieCard from "../components/Card/MovieCard"
+import Hero from "@/components/HomePage/Hero"
+import MovieCard from "@/components/Card/MovieCard"
 import Link from "next/link"
 
 function HomePage({ latestMovies, selectedMovie }) {

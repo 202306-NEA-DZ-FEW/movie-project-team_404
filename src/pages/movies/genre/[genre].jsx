@@ -9,11 +9,10 @@ const Genre = ({ config, data, page, choosenGenre }) => {
 
   return (
     <>
-      <div className="my-12 text-accent font-bold">
+      <div className="font-bold text-opacity-20 text-5xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 text-center">
         <h1
           className="
-          text-[10vw] text-center
-          sm:text-[5vw] sm:px-10"
+          "
         >
           {choosenGenre}
         </h1>
