@@ -3,7 +3,7 @@ import Hero from "@/components/HomePage/Hero"
 import MovieCard from "@/components/Card/MovieCard"
 import Link from "next/link"
 
-function HomePage({ latestMovies, selectedMovie }) {
+function HomePage({ latestMovies }) {
   return (
     <main className="font-mono ">
       <Hero movies={latestMovies.results} />
@@ -24,12 +24,9 @@ function HomePage({ latestMovies, selectedMovie }) {
 
 export async function getStaticProps() {
   const data = await moviesFetcher("trending/movie/week?language=en-US")
-  const randomIndex = Math.floor(Math.random() * data.results.length)
-  const selectedMovie = data.results[randomIndex]
   return {
     props: {
       latestMovies: data,
-      selectedMovie,
     },
   }
 }
