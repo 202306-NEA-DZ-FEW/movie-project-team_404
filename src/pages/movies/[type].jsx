@@ -1,8 +1,8 @@
 import { moviesFetcher } from "@/utils/api"
 
-import Card from "@/components/Card"
-import MovieCard from "../components/Card/MovieCard"
+import MovieCard from "@/components/Card/MovieCard"
 import Pagination from "@/components/Pagination"
+import Link from "next/link"
 
 const Movies = ({ config, data, page, typeIndex }) => {
   const imgConfig = config.images.base_url + config.images.backdrop_sizes[0]
@@ -26,14 +26,15 @@ const Movies = ({ config, data, page, typeIndex }) => {
           {realmoviesTypes[typeIndex]}
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-10 py-20 px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-10 py-20 px-10">
         {data.results.map((movie) => {
           return (
-            <MovieCard
-              title={movie.original_title}
-              poster_path={movie.poster_path}
-              key={movie.id}
-            />
+            <Link href={`/movies/movie/${movie.id}`} key={movie.id}>
+              <MovieCard
+                title={movie.original_title}
+                poster_path={movie.poster_path}
+              />
+            </Link>
           )
         })}
       </div>

@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import SearchBox from "@/components/SearchBox"
-import SideDrawer from "@/components/SideDrawer"
+import SearchBox from "@/components/NavBar/SearchBox"
+import SideDrawer from "@/components/NavBar/SideDrawer"
 import { moviesFetcher } from "@/utils/api"
-const NavBar = () => {
+const NavBar = ({ handleSearch, search }) => {
   const [drawerChecked, setDrawerChecked] = useState(false)
   const [theme, setTheme] = useState("dark")
   const [genres, setGenres] = useState([])
@@ -14,6 +14,7 @@ const NavBar = () => {
   const handleDrawer = () => {
     setDrawerChecked((drawerChecked) => !drawerChecked)
   }
+
   const movies = [
     {
       name: "Now Playing ",
@@ -40,6 +41,7 @@ const NavBar = () => {
     const data = await moviesFetcher("genre/movie/list?language=en")
     setGenres(data.genres.slice(1, 13))
   }
+
   useEffect(() => {
     window?.localStorage.setItem("theme", theme)
     const localTheme = window?.localStorage.getItem("theme")
@@ -102,7 +104,7 @@ const NavBar = () => {
 
               <label className="">
                 <li className="text-base">
-                  <Link className="btn btn-ghost p-4 m-2" href="actors">
+                  <Link className="btn btn-ghost p-4 m-2" href="/actors">
                     Actors
                   </Link>
                 </li>
@@ -173,15 +175,15 @@ const NavBar = () => {
 
           {/* Searchbox and dark/light theme toggle */}
           <div className="navbar-end ml-5 ">
-            <SearchBox />
-            <div className="btn btn-ghost btn-circle mr-1">
+            <SearchBox handleSearch={handleSearch} search={search} />
+            <div className="btn btn-ghost border-[1px] btn-circle mr-1">
               <label className="swap swap-rotate px-1">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onChange={handleTheme} />
 
                 {/* sun icon */}
                 <svg
-                  className="swap-on fill-current w-6 h-6"
+                  className="swap-on fill-current w-6 h-6 "
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
