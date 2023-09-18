@@ -7,8 +7,8 @@ function TestCard({ imageURL, actorName, characterName }) {
         src={"https://image.tmdb.org/t/p/w185/" + imageURL}
         alt={actorName}
       />
-      <div className="">
-        <h2 className="text-lg">
+      <div className="text-md">
+        <h2 className="text-md">
           <b>{actorName}</b>
         </h2>
         <p>as {characterName}</p>
