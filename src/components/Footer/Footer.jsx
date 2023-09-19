@@ -5,7 +5,7 @@ import TeamMemberCard from "./TeamMemberCard"
 const Footer = () => {
   const team_members = [
     {
-      name: "Imad Eddine Kettaf",
+      name: "Imad Kettaf",
       github: "https://github.com/breezyback",
     },
     {
@@ -17,7 +17,7 @@ const Footer = () => {
       github: "https://github.com/dzc0d3r",
     },
     {
-      name: "Hocine",
+      name: "Hocine Benouddane",
       github: "https://github.com/hocine1212",
     },
     {
@@ -25,7 +25,7 @@ const Footer = () => {
       github: "https://github.com/HamidAhmidat",
     },
     {
-      name: "IBrahim Hadj",
+      name: "Ibrahim Hadj",
       github: "https://github.com/BrahimHM",
     },
   ]

@@ -8,7 +8,7 @@ function TrailerLayout({ movieData, trailerData, handleScroll }) {
     <div
       id="background-image"
       className={
-        "card card-side shadow-xl h-screen w-full bg-no-repeat bg-cover rounded-none relative"
+        "card card-side shadow-xl h-screen mt-[-4rem] w-full bg-no-repeat bg-cover rounded-none relative"
       }
       style={{
         backgroundImage:
