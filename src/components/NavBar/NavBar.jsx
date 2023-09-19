@@ -65,7 +65,7 @@ const NavBar = ({ handleSearch, search }) => {
       <div className="drawer-content  flex flex-col relative">
         {/* Navbar */}
         <div
-          className="w-full navbar bg-base-100  bg-opacity-70 h-20 backdrop-blur transition-all duration-100  text-base-content 
+          className="w-full navbar bg-base-100  bg-opacity-60 h-20 backdrop-blur transition-all duration-100  text-base-content 
   shadow-lg"
         >
           <div className="flex-none lg:hidden">
