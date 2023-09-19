@@ -9,7 +9,6 @@ const MovieCard = ({ title, poster_path }) => {
           alt={`${title} poster`}
           width={"300"}
           height={"300"}
-          className="w-full"
         />
       </figure>
       <div className="card-body p-4 grid place-content-center text-center ">
