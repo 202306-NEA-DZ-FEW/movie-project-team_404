@@ -1,13 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import SearchBox from "@/components/NavBar/SearchBox"
 import SideDrawer from "@/components/NavBar/SideDrawer"
+
 import { moviesFetcher } from "@/utils/api"
 const NavBar = ({ handleSearch, search }) => {
   const [drawerChecked, setDrawerChecked] = useState(false)
   const [theme, setTheme] = useState("dark")
   const [genres, setGenres] = useState([])
+  const router = useRouter()
   const handleTheme = (e) => {
     e.target.checked ? setTheme("light") : setTheme("dark")
   }
@@ -21,7 +24,7 @@ const NavBar = ({ handleSearch, search }) => {
       url: "/movies/now_playing?page=1",
     },
     {
-      name: "Upcomming ",
+      name: "Upcoming ",
       url: "/movies/upcoming?page=1",
     },
     {
@@ -59,11 +62,11 @@ const NavBar = ({ handleSearch, search }) => {
         checked={drawerChecked}
       />
 
-      <div className="drawer-content  flex flex-col ">
+      <div className="drawer-content  flex flex-col relative">
         {/* Navbar */}
         <div
-          className="w-full navbar bg-base-100  bg-opacity-80 h-20 backdrop-blur transition-all duration-100  text-base-content 
-  shadow-md"
+          className="w-full navbar bg-base-100  bg-opacity-70 h-20 backdrop-blur transition-all duration-100  text-base-content 
+  shadow-lg"
         >
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
@@ -83,7 +86,7 @@ const NavBar = ({ handleSearch, search }) => {
               </svg>
             </label>
           </div>
-          <div className="flex-0 px-2 mx-2 mt-0 text-xl ">
+          <div className="px-2 mx-2 mt-0 text-xl ">
             <Image
               width="40"
               height="40"
@@ -98,13 +101,17 @@ const NavBar = ({ handleSearch, search }) => {
               MoviPlaza
             </Link>
           </div>
-          <div className=" hidden lg:flex flex-1 ">
+          <div className=" hidden lg:flex grow ">
             <ul className="menu menu-horizontal ">
               {/* Navbar menu content here */}
 
-              <label className="">
-                <li className="text-base">
-                  <Link className="btn btn-ghost p-4 m-2" href="/actors">
+              <label
+                className={`${
+                  router.pathname == "/actors" ? "active" : ""
+                } active:bg-transparent active:text-current`}
+              >
+                <li className="text-base ">
+                  <Link className="btn btn-ghost p-4 m-2  " href="/actors">
                     Actors
                   </Link>
                 </li>
@@ -132,7 +139,11 @@ const NavBar = ({ handleSearch, search }) => {
                 >
                   <li>
                     {movies.map((movie) => (
-                      <Link key={movie.url} href={movie.url}>
+                      <Link
+                        onClick={() => document.activeElement.blur()}
+                        key={movie.url}
+                        href={movie.url}
+                      >
                         {movie.name}
                       </Link>
                     ))}
@@ -161,6 +172,7 @@ const NavBar = ({ handleSearch, search }) => {
                   <li>
                     {genres.map((genre) => (
                       <Link
+                        onClick={() => document.activeElement.blur()}
                         key={genre.id}
                         href={`/movies/genre/${genre.name}?page=1`}
                       >
@@ -174,7 +186,7 @@ const NavBar = ({ handleSearch, search }) => {
           </div>
 
           {/* Searchbox and dark/light theme toggle */}
-          <div className="navbar-end ml-5 ">
+          <div className="navbar-end ml-5 w-20 absolute right-2 ">
             <SearchBox handleSearch={handleSearch} search={search} />
             <div className="btn btn-ghost border-[1px] btn-circle mr-1">
               <label className="swap swap-rotate px-1">
@@ -203,7 +215,13 @@ const NavBar = ({ handleSearch, search }) => {
           </div>
         </div>
       </div>
-      <SideDrawer movies={movies} handleDrawer={handleDrawer} genres={genres} />
+      <SideDrawer
+        movies={movies}
+        handleDrawer={handleDrawer}
+        genres={genres}
+        search={search}
+        handleSearch={handleSearch}
+      />
     </div>
   )
 }

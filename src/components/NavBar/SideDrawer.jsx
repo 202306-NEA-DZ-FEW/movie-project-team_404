@@ -1,16 +1,15 @@
 import Link from "next/link"
 
-const SideDrawer = ({ movies, handleDrawer, genres }) => {
-  const mobileGenre = genres.slice(0, 10)
+const SideDrawer = ({ movies, handleDrawer, genres, search, handleSearch }) => {
   return (
     <>
       {/*  side drawer */}
 
-      <div className="drawer-side ">
+      <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-100">
+
+        <ul className="menu p-4 w-80 min-h-full bg-base-100 ">
           <ul className="menu menu-horizontal flex flex-col">
-            {/* Navbar menu content here */}
             <div className="dropdown dropdown-bottom dropdown-start">
               <label tabIndex={0} className=" btn btn-ghost m-2 w-full">
                 Genres
@@ -30,7 +29,7 @@ const SideDrawer = ({ movies, handleDrawer, genres }) => {
                 tabIndex={0}
                 className="dropdown-content z-[1] menu m-2 shadow bg-base-200 rounded-box w-full"
               >
-                <li>
+                <li onClick={handleDrawer}>
                   {genres.map((genre) => (
                     <Link
                       key={genre.id}
@@ -73,7 +72,7 @@ const SideDrawer = ({ movies, handleDrawer, genres }) => {
             </div>
             <label className=" flex-1">
               <li className="text-base" onClick={handleDrawer}>
-                <Link className="btn btn-ghost p-4 m-2 flex-1 " href="actors">
+                <Link className="btn btn-ghost p-4 m-2 flex-1 " href="/actors">
                   Actors
                 </Link>
               </li>

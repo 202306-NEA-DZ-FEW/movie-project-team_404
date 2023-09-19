@@ -1,7 +1,7 @@
 const SearchBox = ({ search, handleSearch }) => {
   return (
     <>
-      <div className="form-control hidden lg:flex">
+      <div className="form-control hidden md:flex lg:flex">
         <div className="">
           <input
             type="text"
