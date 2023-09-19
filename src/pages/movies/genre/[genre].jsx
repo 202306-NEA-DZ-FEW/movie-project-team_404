@@ -9,15 +9,15 @@ const Genre = ({ config, data, page, choosenGenre }) => {
 
   return (
     <>
-      <div className="font-bold text-opacity-20 text-5xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 text-center">
+      <div className="font-bold text-opacity-20 text-4xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-700 mt-7 text-center">
         <h1
-          className="
+          className=" mt-4
           "
         >
           {choosenGenre}
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-10 py-20 px-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-10 py-12 px-10">
         {data.results.map((movie) => {
           return (
             <Link href={`/movies/movie/${movie.id}`} key={movie.id}>

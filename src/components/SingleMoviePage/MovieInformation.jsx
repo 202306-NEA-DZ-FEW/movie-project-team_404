@@ -10,10 +10,9 @@ function MovieInformation({ movieData, creditsData }) {
   return (
     <div>
       <div className="text-center">
-        <h1 className="text-4xl pt-5 font-semibold">{movieData.title}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 text-left">
           <div>
-            <h1 className="text-xl pt-16 pb-5 font-medium text-center">
+            <h1 className="font-bold text-opacity-20 text-2xl text-transparent mb-5 bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 py-18  text-center">
               Informations:
             </h1>
             <p className="text-lg px-20">
@@ -54,7 +53,9 @@ function MovieInformation({ movieData, creditsData }) {
           </div>
           <div>
             <div className="text-center">
-              <h1 className="text-xl pt-16 pb-5 font-medium">Overview:</h1>
+              <h1 className="font-bold text-opacity-20 text-2xl text-transparent mb-5 bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 py-18  text-center">
+                Overview:
+              </h1>
               <p className="text-lg px-20 text-left">{movieData.overview}</p>
             </div>
           </div>

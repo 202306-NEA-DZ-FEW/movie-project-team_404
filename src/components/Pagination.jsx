@@ -7,7 +7,6 @@ const Pagination = ({ pages, currentPage }) => {
   let [buttonsList, setButtonsList] = useState([])
 
   currentPage = parseInt(currentPage)
-  console.log(pages)
 
   useEffect(() => {
     if (currentPage === pages) {

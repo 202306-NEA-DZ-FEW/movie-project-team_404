@@ -1,11 +1,10 @@
 import React from "react"
 
 const Rating = ({ rating }) => {
-  // Ensure the rating is within the 0 to 10 range
   rating = rating / 2
   const normalizedRating = Math.min(10, Math.max(0, rating))
 
-  // Calculate the number of filled stars (whole and decimal parts)
+  // Calculate the number of filled stars
   const wholeStars = Math.floor(normalizedRating)
   const decimalPart = normalizedRating - wholeStars
 
@@ -21,7 +20,7 @@ const Rating = ({ rating }) => {
     )
   }
 
-  // Create empty stars for the decimal part
+  // Create empty stars
   if (decimalPart > 0) {
     stars.push(
       <span key="half" className="text-gray-400 text-xl">

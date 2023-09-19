@@ -5,7 +5,7 @@ import Link from "next/link"
 export default function Actors({ actors }) {
   return (
     <div>
-      <h1 className="font-bold text-opacity-20 text-5xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 py-18  text-center ">
+      <h1 className="font-bold text-opacity-20 text-4xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-10 py-18  text-center ">
         Popular Actors
       </h1>
       <div className="h- 500 grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-10 mx-auto justify-items-center mt-10 py-15">
