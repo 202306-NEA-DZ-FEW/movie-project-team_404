@@ -10,7 +10,7 @@ const SplashScreen = ({ finishLoading }) => {
       if (document.readyState === "complete") {
         finishLoading()
       }
-    }, 580)
+    }, 700)
     return () => {
       clearInterval(time)
     }
