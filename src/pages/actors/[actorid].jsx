@@ -1,12 +1,11 @@
-import Image from "next/image"
 import Link from "next/link"
 import { moviesFetcher } from "@/utils/api"
 import ActorCard from "@/components/ActorCard"
 
 export default function ActorPage({ actorData, Movies }) {
   return (
-    <div className="py-20">
-      <h2 className="body-font text-center text-3xl text-emerald-300 font-serif">
+    <div className="">
+      <h2 className="font-bold text-opacity-20 text-5xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 mt-8 text-center">
         {actorData.name}
       </h2>
       <ActorCard
@@ -17,24 +16,20 @@ export default function ActorPage({ actorData, Movies }) {
         deathday={actorData.deathday}
         biography={actorData.biography}
       />
-      <h3 className=" text-teal-600 text-lg title-font font-medium mb-3 mx-5">
+      <h3 className="font-bold text-opacity-20 text-5xl text-transparent  bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-600 m-10 py-18  text-center">
         Related Movies
       </h3>
-      <div class="grid gap-4 grid-cols-3 grid-rows-3 items-center text-center mx-20">
+      <div class="w-4/5 sm:w-full  sm:px-20  grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mx-auto justify-center p-8">
         {Movies.map((item) => {
           return (
-            <Link
-              href={`../movies/${item.id}`}
-              className=" content-center"
-              key={item.original_title}
-            >
-              <div className=" flex flex-col">
+            <Link href={`/movies/movie/${item.id}`} key={item.original_title}>
+              <div className=" card shadow-xl border hover:scale-105 transition-transform duration-300 hover:border-blue-500 transition-border w-full h-full rounded-2xl overflow-hidden">
                 <img
                   alt={item.original_title}
-                  class="object-cover object-center rounded-md "
-                  src={"https://image.tmdb.org/t/p/w500" + item.backdrop_path}
+                  className=" "
+                  src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
                 />
-                <p class="leading-relaxed text-[11px] break-words ">
+                <p class="card-body p-4 grid place-content-center text-center card-title ">
                   {item.original_title}
                 </p>
               </div>

@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import { headers } from "../../next.config"
+
 const gender_value = (value) => {
   switch (value) {
     case 0:
@@ -14,67 +14,43 @@ const gender_value = (value) => {
       return "undefined"
   }
 }
-const ActorCard = (props) => {
+const ActorCard = ({
+  imageUrl,
+  gender,
+  popularity,
+  birthday,
+  deathday,
+  biography,
+  name,
+}) => {
+  const deathDay = deathday ? deathday : "Not yet"
   return (
-    <section class="body-font">
-      <div class="container px-5 py-2 mx-auto flex ">
-        <div class="w-1/2 mb-10 lg:mb-0 rounded-xl overflow-hidden">
-          <img
-            alt="feature"
-            class="object-cover object-center"
-            src={"https://image.tmdb.org/t/p/w500" + props.imageUrl}
-          />
-        </div>
-        <div class="flex flex-col flex-wrap py-6 -mb-10 w-1/2 pl-12 text-left  ">
-          <div class="flex flex-col mb-10 items-start ">
-            <div class="flex-grow">
-              <h2 class=" text-teal-600 text-lg title-font font-medium mb-3 sm:text-base">
-                Gender
-              </h2>
-              <p class="leading-relaxed text-base sm:text-sm">
-                {gender_value(props.gender)}
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col mb-10 items-start ">
-            <div class="flex-grow">
-              <h2 class="text-teal-600 text-lg title-font font-medium mb-3 sm:text-base">
-                Popularity
-              </h2>
-              <p class="leading-relaxed text-base sm:text-sm">
-                {props.popularity}
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col mb-10 items-start ">
-            <div class="flex-grow">
-              <h2 class="text-teal-600 text-lg title-font font-medium mb-3 sm:text-base">
-                Birthday
-              </h2>
-              <p class="leading-relaxed text-base sm:text-sm">
-                {props.birthday}
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col mb-10 items-start ">
-            <div class="flex-grow">
-              <h2 class="text-teal-600 text-lg title-font font-medium mb-3 sm:text-base">
-                Deathday
-              </h2>
-              <p class="leading-relaxed text-base sm:text-sm">
-                {props.deathday}
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col mb-10 items-start  w-[40rem]">
-            <div class="flex-grow">
-              <h2 class="text-teal-600 text-lg title-font font-medium mb-3 sm:text-base">
-                Biography
-              </h2>
-              <p class=" text-[11px] sm:w-[370px] ">{props.biography}</p>
-            </div>
-          </div>
-        </div>
+    <section className="grid xl:grid-cols-3 md:grid-cols-1 sm:grid-cols-1  gap-5">
+      <div className="col-span-1 justify-self-center max-sm:col-span-2 mt-9">
+        <img
+          alt="feature"
+          class="object-cover object-center"
+          src={"https://image.tmdb.org/t/p/w500" + imageUrl}
+          className="rounded-lg w-auto h-auto"
+        />
+      </div>
+      <div className="col-span-2 px-4 border-x-2 m-10 ">
+        <h2 className="m-10 font-bold">
+          Gender : <span className="font-normal">{gender_value(gender)}</span>
+        </h2>
+        <h2 className="m-10 font-bold">
+          Popularity : <span className="font-normal">{popularity}</span>
+        </h2>
+        <h2 className="m-10 font-bold">
+          Birthday : <span className="font-normal">{birthday}</span>
+        </h2>
+
+        <h2 className="m-10 font-bold">
+          Deathday : <span className="font-normal">{deathDay}</span>
+        </h2>
+
+        <h2 className="m-10 font-bold">Biography :</h2>
+        <p className=" inline-block ">{biography}</p>
       </div>
     </section>
   )

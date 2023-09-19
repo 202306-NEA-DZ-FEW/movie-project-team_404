@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const MovieCard = ({ title, poster_path }) => {
   return (
-    <div className="card shadow-xl h-[100%]  border hover:scale-105 transition-transform duration-300 hover:border-blue-500 transition-border duration-300">
+    <div className="card shadow-xl h-[100%]  border hover:scale-105 transition-transform duration-300 hover:border-blue-500 transition-border ">
       <figure>
         <Image
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
