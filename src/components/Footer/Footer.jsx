@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import TeamMemberCard from "./TeamMemberCard"
 
 const Footer = () => {
   const team_members = [
@@ -8,7 +9,7 @@ const Footer = () => {
       github: "https://github.com/breezyback",
     },
     {
-      name: "Habchi Sid Ali",
+      name: "Habchi SidAli",
       github: "https://github.com/HabchiSidAli",
     },
     {
@@ -24,7 +25,7 @@ const Footer = () => {
       github: "https://github.com/HamidAhmidat",
     },
     {
-      name: " Brahim Hadj Mahammed ",
+      name: "IBrahim Hadj",
       github: "https://github.com/BrahimHM",
     },
   ]
@@ -50,7 +51,7 @@ const Footer = () => {
         <nav className="mx-auto">
           <header className="footer-title mx-auto mb-5">Team Members</header>
           <div className="grid grid-cols-2 gap-3 sm:gap-2 xl:grid-cols-6 lg:grid-cols-6 md:grid-cols-3 mb-2  ">
-            {team_members.map((member) => (
+            {/* {team_members.map((member) => (
               <Link
                 key={member.github}
                 href={member.github}
@@ -70,7 +71,8 @@ const Footer = () => {
                   {member.name}
                 </p>
               </Link>
-            ))}
+            ))} */}
+            <TeamMemberCard team_members={team_members} />
           </div>
         </nav>
       </footer>
