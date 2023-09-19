@@ -21,10 +21,8 @@ export default function MoviePage({
   return (
     <>
       <TrailerLayout
-        movieBackdrop={movieData.backdrop_path}
-        moviePoster={movieData.poster_path}
-        movieTitle={movieData.title}
-        youtubeKey={trailerData.results[0].key}
+        movieData={movieData}
+        trailerData={trailerData}
         handleScroll={handleScroll}
       />
       <div>
